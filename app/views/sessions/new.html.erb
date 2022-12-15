@@ -1,0 +1,11 @@
+<h1>Login Please</h1>
+
+<%= form_with model: @user, url: sign_in_path do |form| %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.password_field :password %>
+
+  <div class="mt-2">
+    <%= form.submit "Login" %>
+  </div>
+<% end %>
