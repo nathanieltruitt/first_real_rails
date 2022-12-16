@@ -1,0 +1,19 @@
+<%= form_with model: Current.user, url: password_reset_path do |form| %>
+  <% if form.object.errors.any? %>
+    <div class="alert alert-danger">
+    <% form.object.errors.full_messages.each do |err| %>
+      <%= err %>
+      <% end %>
+    </div>
+    <% end %>
+
+  <%= form.label "Password" %>
+  <%= form.password_field :password %>
+
+  <%= form.label "Confirm password" %>
+  <%= form.password_field :password_confirmation %>
+
+  <div class="mt-2">
+    <%= form.submit "Change Password" %>
+  </div>
+<% end %>
